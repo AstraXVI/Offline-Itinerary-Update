@@ -1,114 +1,202 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Offline Itinerary v3.4 Update</title>
-    <style type="text/css">
-      /* Basic Reset */
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Offline Itinerary v3.4 Update</title>
+
+<style>
     * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
     }
-    
+
     body {
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        font-family: "Segoe UI", Tahoma, sans-serif;
         background-color: #f4f6f8;
+        padding: 20px;
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 100vh;
+        min-height: 100vh;
     }
-    
+
     .container {
         background: #fff;
-        width: 650px;
+        max-width: 1100px;
         padding: 40px;
-        border-radius: 10px;
+        border-radius: 15px;
         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        text-align: center;
     }
-    
-    /* Logo */
-    .logo img {
-        width: 100px;
-        height: 100px;
-        object-fit: contain;
+
+    /* LEFT & RIGHT CONTENT */
+    .main-content {
+        display: flex;
+        gap: 40px;
+        align-items: flex-start;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    /* LEFT SECTION */
+    .left-section {
+        flex: 1;
+        min-width: 280px;
+        text-align: left;
+    }
+
+    .left-section img {
+        width: 140px;
+        height: auto;
         margin-bottom: 20px;
     }
-    
-    /* Features List */
-    .features h2 {
-        font-size: 20px;
-        margin-bottom: 15px;
-        color: #333;
-    }
-    
-    .features ul {
-        list-style-type: disc;
-        text-align: left;
-        padding-left: 40px;
+
+    .install-box {
+        background: #f0f4f7;
+        padding: 15px;
+        border-radius: 10px;
+        margin-bottom: 25px;
+        font-size: 14px;
         color: #444;
-        line-height: 1.6;
+        line-height: 1.5;
     }
-    
-    /* Download Buttons */
-    .download-buttons {
-        margin-top: 30px;
+
+    /* DOWNLOAD BUTTONS */
+    .download-left {
+        margin-top: 10px;
     }
-    
+
     .btn {
         display: inline-block;
-        background: #0078d7;
-        color: white;
+        padding: 12px 25px;
+        color: #fff;
         text-decoration: none;
-        padding: 10px 20px;
-        border-radius: 5px;
-        margin: 0 10px;
-        transition: background 0.3s ease;
+        border-radius: 6px;
+        margin-right: 10px;
+        font-size: 15px;
+        transition: 0.3s ease;
     }
-    
-    .btn:hover {
-        background: #005fa3;
-    }
-    
 
-    </style>
+    .btn:hover { opacity: 0.8; }
+
+    .btn-android { background-color: #76be55; }
+    .btn-huawei { background-color: #ee4348; }
+
+    /* RIGHT SECTION */
+    .right-section {
+        flex: 2;
+        min-width: 300px;
+        text-align: left;
+    }
+
+    .right-section h1 {
+        color: #222;
+        margin-bottom: 5px;
+        font-size: 26px;
+    }
+
+    .right-section h2 {
+        color: #555;
+        margin-bottom: 15px;
+        font-size: 18px;
+    }
+
+    ul {
+        padding-left: 20px;
+        line-height: 1.6;
+        font-size: 15px;
+        color: #444;
+    }
+
+    /* 🔥 MOBILE VERSION — EVERYTHING CENTERED */
+    @media (max-width: 768px) {
+        .main-content {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .left-section {
+            text-align: center;
+        }
+
+        .install-box {
+            text-align: center;
+        }
+
+        .download-left {
+            text-align: center;
+        }
+
+        .btn { 
+            margin: 10px 5px; 
+        }
+
+        .right-section {
+            text-align: center;
+        }
+
+        ul {
+            text-align: left; /* Keep bullets aligned, looks cleaner */
+            display: inline-block; /* Center the list block */
+            padding-left: 20px;
+        }
+    }
+</style>
 </head>
-<body>
-    <div class="container">
-        <!-- Logo Section -->
-        <div class="logo">
-            <img style="width: 200px;" src="https://www.multi-line.com.ph/wp-content/uploads/2025/02/multi-logo.png" alt="Logo">
-        </div>
 
-        <!-- Enhancements/New Features -->
-        <div class="features">
+<body>
+<div class="container">
+
+      <img style="display:block; margin-inline:auto;margin-bottom: 20px;" src="https://www.multi-line.com.ph/wp-content/uploads/2025/02/multi-logo.png" alt="Logo">
+      
+    <div class="main-content">
+      
+      <!-- LOGO -->
+
+        <!-- LEFT SECTION -->
+        <div class="left-section">
+            
             <h1>Offline Itinerary v3.4</h1>
-            <h2>Enhancements / New Features</h2>
-            <ul style="text-align: justify;">
-                  <li><strong>Better GPS Checking</strong> – The app now checks your location signal every few seconds to make sure it’s accurate.</li>
+            <h2 style="margin-bottom: 20px;">Enhancements / New Features</h2>
+
+            <ul>
+                <li><strong>Better GPS Checking</strong> – The app now checks your location signal every few seconds to make sure it’s accurate.</li>
                   <li><strong>GPS Reminder Popup</strong> – Before entering the main menu, the app will remind you to turn on location. If it’s off, the app will close automatically to avoid errors.</li>
                   <li><strong>GPS Signal Indicator</strong> – See your GPS signal strength (Good or Weak) at the top of the main menu.</li>
                   <li><strong>No Need to Restart for Location</strong> – You don’t have to close and reopen the app to refresh your location anymore.</li>
-                  <li><strong>Better Camera Compatibility</strong> – The camera now works properly on all Android versions, especially newer ones with stricter permissions.</li>
+                  <li><strong>Better Camera Compatibility</strong> – The camera now works properly on many Android versions, especially newer ones with stricter permissions.</li>
                   <li><strong>Logs</strong> – After capturing a photo, the app will automatically go to the logs so you can confirm it was saved successfully.</li>
                   <li><strong>View Photos in Gallery</strong> – Open captured photos directly in your phone’s gallery from the logs.</li>
-                  <li><strong>Automatic Employee Info Update</strong> – If we update your name, department, or other info in the company database, the app will update it automatically.</li>
+                  <li><strong>Automatic Employee Info Update</strong> – Auto-sync feature to update user details automatically.</li>
                   <li><strong>No More Duplicate Uploads</strong> – Each log is uploaded only once to prevent double entries.</li>
                   <li><strong>Crash Fixes</strong> – Fixed issues that caused the app to crash when reconnecting to the internet.</li>
                   <li><strong>Stuck Picture Problem</strong> – Fixed an issue where the first photo was reused even after taking a new one.</li>
             </ul>
-        </div>
-        
-        <h3 style="margin-top: 20px; color: #2596be">Click Below to Download the New Version ⬇</h3>
 
-        <!-- Download Buttons -->
-        <div class="download-buttons">
-            <a href="https://drive.google.com/file/d/1ZJCDkr6qF_uJWZIAFOKuQstPIoF-B_pv/view?usp=sharing" class="btn" style="background-color:#76be55">For Android</a>
-            <a href="https://drive.google.com/file/d/18xG2thjrPEX3t65DG78bWFYETQqBxjL9/view?usp=sharing" class="btn" style="background-color:#ee4348">For Huawei</a>
         </div>
+
+        <!-- RIGHT SECTION -->
+        <div class="right-section">
+          <h4 style="color: red; margin-bottom: 20px;">Before Uninstalling the existing app, please be sure that all the pending itinerary are synced!!</h4>
+             <!-- INSTALL INSTRUCTIONS -->
+            <div class="install-box">
+                <strong>How to Install:</strong><br><br>
+                1. Uninstall the old version<br>
+                2. Download the APK below<br>
+                3. Install the new version<br>
+                4. Allow all permissions when prompted
+            </div>
+
+            <!-- DOWNLOAD BUTTONS -->
+            <div class="download-left">
+                <a href="" class="btn btn-android">For Android</a>
+                <a href="" class="btn btn-huawei">For Huawei</a>
+            </div>
+        </div>
+
     </div>
+
+</div>
 </body>
 </html>
